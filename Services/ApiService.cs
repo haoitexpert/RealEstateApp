@@ -1,7 +1,6 @@
 ﻿using Microsoft.Win32;
 using Newtonsoft.Json;
 using RealEstateApp.Models;
-using SoundAnalysis;
 using System;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
@@ -53,9 +52,41 @@ namespace RealEstateApp.Services
         public static async Task<List<Category>> GetCategories()
         {
             var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Preferences.Get("accesstoken", string.Empty));
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
             var response = await httpClient.GetStringAsync(AppSettings.ApiUrl + "api/categories");
             return JsonConvert.DeserializeObject<List<Category>>(response);
+        }
+
+        public static async Task<List<TrendingProperty>> GetTrendingProperties()
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
+            var response = await httpClient.GetStringAsync(AppSettings.ApiUrl + "api/Properties/TrendingProperties");
+            return JsonConvert.DeserializeObject<List<TrendingProperty>>(response);
+        }
+
+        public static async Task<List<SearchProperty>> FindProperties(string address)
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
+            var response = await httpClient.GetStringAsync(AppSettings.ApiUrl + "api/Properties/SearchProperties?address="+ address);
+            return JsonConvert.DeserializeObject<List<SearchProperty>>(response);
+        }
+
+        public static async Task<List<PropertyByCategory>> GetPropertyByCategory(int categoryId)
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
+            var response = await httpClient.GetStringAsync(AppSettings.ApiUrl + "api/Properties/PropertyList?categoryId=" + categoryId);
+            return JsonConvert.DeserializeObject<List<PropertyByCategory>>(response);
+        }
+
+        public static async Task<List<PropertyDetail>> GetPropertyDetail(int propertyId)
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
+            var response = await httpClient.GetStringAsync(AppSettings.ApiUrl + "api/Properties/PropertyDetail?id=" + propertyId);
+            return JsonConvert.DeserializeObject<List<PropertyDetail>>(response);
         }
     }
 }
