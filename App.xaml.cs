@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using RealEstateApp.Pages;
 
 namespace RealEstateApp
 {
@@ -7,11 +8,8 @@ namespace RealEstateApp
         public App()
         {
             InitializeComponent();
-        }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
+            MainPage = new RegisterPage();
         }
     }
 }
