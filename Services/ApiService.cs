@@ -88,5 +88,36 @@ namespace RealEstateApp.Services
             var response = await httpClient.GetStringAsync(AppSettings.ApiUrl + "api/Properties/PropertyDetail?id=" + propertyId);
             return JsonConvert.DeserializeObject<List<PropertyDetail>>(response);
         }
+
+
+        public static async Task<List<BookmarkList>> GetBookmarkList()
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
+            var response = await httpClient.GetStringAsync(AppSettings.ApiUrl + "api/bookmarks");
+            return JsonConvert.DeserializeObject<List<BookmarkList>>(response);
+        }
+
+        public static async Task<bool> AddBookmark(AddBookmark addBookmark)
+        {
+            
+            var httpClient = new HttpClient();
+            var json = JsonConvert.SerializeObject(addBookmark);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
+            var response = await httpClient.PostAsync(AppSettings.ApiUrl + "api/bookmarks", content);
+            if (!response.IsSuccessStatusCode) return false;
+            return true;
+        }
+
+        public static async Task<bool> DeleteBookmark(int propertyId)
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
+            var response = await httpClient.DeleteAsync(AppSettings.ApiUrl + "api/bookmarks/" + propertyId);
+            if (!response.IsSuccessStatusCode) return false;
+            return true;
+           
+        }
     }
 }
