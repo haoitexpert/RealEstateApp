@@ -24,7 +24,7 @@
         <Entry x:Name="EntEmail" Placeholder="Email"/>
         <Entry x:Name="EntPhone" Placeholder="Phone"/>
         <Entry x:Name="EntPassword" Placeholder="Password" IsPassword="True"/>
-        <Button x:Name="BtnRegister" Text="Register Now" HeightRequest="50" FontSize="Medium" BackgroundColor="#1d94ab"/>
+        <Button x:Name="BtnRegister" Text="Register Now" HeightRequest="50" FontSize="Medium" BackgroundColor="#1d94ab" Clicked="BtnRegister_Clicked"/>
 
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Text="Already have an account? " FontSize="Medium" TextColor="#101010"/>
