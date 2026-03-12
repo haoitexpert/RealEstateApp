@@ -29,6 +29,10 @@
         <HorizontalStackLayout HorizontalOptions="Center">
             <Label Text="Already have an account? " FontSize="Medium" TextColor="#101010"/>
             <Label Text="Sign In" FontSize="Medium" TextColor="#1d94ab"/>
+
+            <HorizontalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer x:Name="TapLogin" Tapped="TapLogin_Tapped"/>
+            </HorizontalStackLayout.GestureRecognizers>
         </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

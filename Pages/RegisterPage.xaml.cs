@@ -15,10 +15,16 @@ public partial class RegisterPage : ContentPage
 		if (response)
 		{
 			await DisplayAlert("", "Your account has been created", "Alright");
+			await Navigation.PushModalAsync(new LoginPage());
 		}
         else
         {
             await DisplayAlert("", "An error occurred while creating your account", "Cancel");
         }
+    }
+
+    async void TapLogin_Tapped(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushModalAsync(new LoginPage());
     }
 }
