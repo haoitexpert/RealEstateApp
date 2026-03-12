@@ -9,7 +9,7 @@ namespace RealEstateApp
         {
             InitializeComponent();
 
-            MainPage = new RegisterPage();
+            MainPage = new NavigationPage(new RegisterPage());
         }
     }
 }
