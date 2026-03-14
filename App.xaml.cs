@@ -9,7 +9,15 @@ namespace RealEstateApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new RegisterPage());
+            var accessToken =  Preferences.Get("accesstoken", string.Empty);
+            if (string.IsNullOrEmpty(accessToken))
+            {
+                MainPage = new RegisterPage();
+            }
+            else
+            { 
+                MainPage = new CustomTabbedPage();
+            }
         }
     }
 }
