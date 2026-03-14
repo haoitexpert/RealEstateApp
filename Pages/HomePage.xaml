@@ -40,8 +40,30 @@
                 <Label Text="Categories" FontSize="Large"/>
 
                 <CollectionView x:Name="CvCategories"
-                         HeightRequest="50"
+                         HeightRequest="80"
                          >
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame>
+                                <HorizontalStackLayout Spacing="5">
+                                    <Image Aspect="AspectFit"
+                                           HeightRequest="30"
+                                           WidthRequest="30"
+                                           Source="{Binding FullImageUrl}"
+                                           />
+                                    <Label VerticalOptions="Center"
+                                           FontSize="Medium"
+                                             Text="{Binding Name}"
+                                           />
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
 
                 </CollectionView>
             </VerticalStackLayout>
