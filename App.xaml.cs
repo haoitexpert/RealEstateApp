@@ -12,7 +12,7 @@ namespace RealEstateApp
             var accessToken =  Preferences.Get("accesstoken", string.Empty);
             if (string.IsNullOrEmpty(accessToken))
             {
-                MainPage = new RegisterPage();
+                MainPage = new LoginPage();
             }
             else
             { 
