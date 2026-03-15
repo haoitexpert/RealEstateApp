@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="RealEstateApp.Pages.PracticePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Luyện Tập UI"
+    BackgroundColor="#F5F6FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
+
+            <!-- ═══════════════════════════════════════════════ -->
+            <!--  BÀI 1: VerticalStackLayout                    -->
+            <!--  Mục tiêu: xếp 3 label dọc có khoảng cách     -->
+            <!-- ═══════════════════════════════════════════════ -->
+            <Frame BackgroundColor="White" CornerRadius="16" Padding="16">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="📝 BÀI 1 — VerticalStackLayout" FontAttributes="Bold" FontSize="16" TextColor="#1d94ab"/>
+                    <Label Text="Làm: Xếp 3 dòng chữ từ trên xuống có khoảng cách 10" FontSize="12" TextColor="#888"/>
+                    <BoxView HeightRequest="1" BackgroundColor="#EEEEEE"/>
+
+                    <!-- TODO: Xóa comment dưới và tự viết lại -->
+                    <!--
+                    <VerticalStackLayout Spacing="???">
+                        <Label Text="Dòng 1"/>
+                        <Label Text="Dòng 2"/>
+                        <Label Text="Dòng 3"/>
+                    </VerticalStackLayout>
+                    -->
+
+                    <!-- ĐÁP ÁN (xóa comment để xem kết quả) -->
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Dòng 1 — Xin chào" FontSize="14"/>
+                        <Label Text="Dòng 2 — Tôi đang học MAUI" FontSize="14"/>
+                        <Label Text="Dòng 3 — UI rất thú vị!" FontSize="14"/>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- ═══════════════════════════════════════════════ -->
+            <!--  BÀI 2: HorizontalStackLayout                  -->
+            <!--  Mục tiêu: xếp icon + chữ nằm ngang            -->
+            <!-- ═══════════════════════════════════════════════ -->
+            <Frame BackgroundColor="White" CornerRadius="16" Padding="16">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="📝 BÀI 2 — HorizontalStackLayout" FontAttributes="Bold" FontSize="16" TextColor="#1d94ab"/>
+                    <Label Text="Làm: Xếp 📍 + địa chỉ nằm ngang, cách nhau 8" FontSize="12" TextColor="#888"/>
+                    <BoxView HeightRequest="1" BackgroundColor="#EEEEEE"/>
+
+                    <!-- TODO: Tự viết -->
+                    <!--
+                    <HorizontalStackLayout Spacing="???">
+                        <Label Text="📍"/>
+                        <Label Text="123 Nguyễn Huệ, Q1"/>
+                    </HorizontalStackLayout>
+                    -->
+
+                    <!-- ĐÁP ÁN -->
+                    <HorizontalStackLayout Spacing="8">
+                        <Label Text="📍" VerticalOptions="Center"/>
+                        <Label Text="123 Nguyễn Huệ, Quận 1, TP.HCM"
+                               VerticalOptions="Center"
+                               FontSize="14"
+                               TextColor="#555"/>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- ═══════════════════════════════════════════════ -->
+            <!--  BÀI 3: Grid + RowDefinitions                  -->
+            <!--  Mục tiêu: chia 3 hàng, mỗi hàng 1 label       -->
+            <!-- ═══════════════════════════════════════════════ -->
+            <Frame BackgroundColor="White" CornerRadius="16" Padding="16">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="📝 BÀI 3 — Grid + RowDefinitions" FontAttributes="Bold" FontSize="16" TextColor="#1d94ab"/>
+                    <Label Text="Làm: Dùng Grid chia 3 hàng, hàng 0=Tên, hàng 1=Giá, hàng 2=Địa chỉ" FontSize="12" TextColor="#888"/>
+                    <BoxView HeightRequest="1" BackgroundColor="#EEEEEE"/>
+
+                    <!-- TODO: Tự viết -->
+                    <!--
+                    <Grid RowSpacing="6">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="???"/>
+                            <RowDefinition Height="???"/>
+                            <RowDefinition Height="???"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="?" Text="Căn hộ cao cấp"/>
+                        <Label Grid.Row="?" Text="$500,000"/>
+                        <Label Grid.Row="?" Text="Quận 2, TP.HCM"/>
+                    </Grid>
+                    -->
+
+                    <!-- ĐÁP ÁN -->
+                    <Grid RowSpacing="6">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               Text="Căn hộ cao cấp"
+                               FontAttributes="Bold"
+                               FontSize="16"/>
+                        <Label Grid.Row="1"
+                               Text="$500,000"
+                               TextColor="#1d94ab"
+                               FontSize="15"/>
+                        <Label Grid.Row="2"
+                               Text="Quận 2, TP.HCM"
+                               TextColor="#888"
+                               FontSize="13"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- ═══════════════════════════════════════════════ -->
+            <!--  BÀI 4: Grid + ColumnDefinitions               -->
+            <!--  Mục tiêu: tiêu đề bên trái, "See All" bên phải-->
+            <!-- ═══════════════════════════════════════════════ -->
+            <Frame BackgroundColor="White" CornerRadius="16" Padding="16">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="📝 BÀI 4 — Grid + ColumnDefinitions" FontAttributes="Bold" FontSize="16" TextColor="#1d94ab"/>
+                    <Label Text='Làm: "Top Picks" bên trái (*), "See All" bên phải (Auto)' FontSize="12" TextColor="#888"/>
+                    <BoxView HeightRequest="1" BackgroundColor="#EEEEEE"/>
+
+                    <!-- TODO: Tự viết -->
+                    <!--
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="???"/>
+                            <ColumnDefinition Width="???"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="?" Text="Top Picks"/>
+                        <Label Grid.Column="?" Text="See All"/>
+                    </Grid>
+                    -->
+
+                    <!-- ĐÁP ÁN -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Text="Top Picks"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               TextColor="#1A1A2E"/>
+                        <Label Grid.Column="1"
+                               Text="See All"
+                               TextColor="#1d94ab"
+                               FontSize="13"
+                               VerticalOptions="Center"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- ═══════════════════════════════════════════════ -->
+            <!--  BÀI 5: CollectionView + DataTemplate          -->
+            <!--  Mục tiêu: hiện danh sách tên thành phố        -->
+            <!-- ═══════════════════════════════════════════════ -->
+            <Frame BackgroundColor="White" CornerRadius="16" Padding="16">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="📝 BÀI 5 — CollectionView + DataTemplate" FontAttributes="Bold" FontSize="16" TextColor="#1d94ab"/>
+                    <Label Text="Làm: Hiển thị danh sách thành phố dạng thẻ ngang" FontSize="12" TextColor="#888"/>
+                    <BoxView HeightRequest="1" BackgroundColor="#EEEEEE"/>
+
+                    <!-- TODO: Tự viết -->
+                    <!--
+                    <CollectionView HeightRequest="???" x:Name="CvCities">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="???" ItemSpacing="???"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame>
+                                    <Label Text="{Binding ???}"/>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    -->
+
+                    <!-- ĐÁP ÁN — data được đổ từ PracticePage.xaml.cs -->
+                    <CollectionView x:Name="CvCities" HeightRequest="60">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame CornerRadius="20"
+                                       Padding="14,8"
+                                       BackgroundColor="#1d94ab"
+                                       BorderColor="Transparent">
+                                    <Label Text="{Binding Name}"
+                                           TextColor="White"
+                                           FontSize="13"
+                                           VerticalOptions="Center"/>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Khoảng trống dưới cùng -->
+            <BoxView HeightRequest="20" Color="Transparent"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

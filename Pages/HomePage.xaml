@@ -1,65 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RealEstateApp.Pages.HomePage"
-             >
+<ContentPage
+    x:Class="RealEstateApp.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ScrollView>
         <Grid Margin="20" RowSpacing="20">
             <Grid.RowDefinitions>
 
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
             <VerticalStackLayout Grid.Row="0" Spacing="5">
-                <Label x:Name="LblUsername"
-                FontSize="Large"
-                
-                />
-                <Label Text="Find your best place to stay"
-                FontSize="Medium"
-                />
+                <Label x:Name="LblUsername" FontSize="Large" />
+                <Label FontSize="Medium" Text="Find your best place to stay" />
             </VerticalStackLayout>
 
             <Frame Grid.Row="1" Padding="15">
                 <HorizontalStackLayout Spacing="20">
-                    <Image Source="search_icon.png"
-                    Aspect="AspectFit"
-                    HeightRequest="25"
-                    WidthRequest="25"
-                    />
-                    <Label Text="Search..."
-                    VerticalOptions="Center"
-                    />
+                    <Image
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="search_icon.png"
+                        WidthRequest="25" />
+                    <Label Text="Search..." VerticalOptions="Center" />
                 </HorizontalStackLayout>
             </Frame>
 
             <VerticalStackLayout Grid.Row="2" Spacing="20">
-                <Label Text="Categories" FontSize="Large"/>
+                <Label FontSize="Large" Text="Categories" />
 
-                <CollectionView x:Name="CvCategories"
-                         HeightRequest="80"
-                         >
+                <CollectionView x:Name="CvCategories" HeightRequest="80">
 
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal"/>
+                        <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Frame>
                                 <HorizontalStackLayout Spacing="5">
-                                    <Image Aspect="AspectFit"
-                                           HeightRequest="30"
-                                           WidthRequest="30"
-                                           Source="{Binding FullImageUrl}"
-                                           />
-                                    <Label VerticalOptions="Center"
-                                           FontSize="Medium"
-                                             Text="{Binding Name}"
-                                           />
+                                    <Image
+                                        Aspect="AspectFit"
+                                        HeightRequest="30"
+                                        Source="{Binding FullImageUrl}"
+                                        WidthRequest="30" />
+                                    <Label
+                                        FontSize="Medium"
+                                        Text="{Binding Name}"
+                                        VerticalOptions="Center" />
                                 </HorizontalStackLayout>
                             </Frame>
                         </DataTemplate>
@@ -69,64 +60,54 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="3" Spacing="20">
-                <Label Text="Top Picks"
-                FontSize="Large"
-                />
+                <Label FontSize="Large" Text="Top Picks" />
                 <CollectionView x:Name="CvTopPicks" HeightRequest="350">
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal"/>
+                        <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame CornerRadius="25"
-                                   Padding="15"
-                                   BackgroundColor="White"
-                                   >
+                            <Frame
+                                Padding="15"
+                                BackgroundColor="White"
+                                CornerRadius="25">
                                 <Grid RowSpacing="5">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
 
-                                    <Frame Grid.Row="0" 
-                                           HeightRequest="200"
-                                           WidthRequest="250"
-                                           CornerRadius="25"
-                                           Padding="0"
-                                           >
-                                        <Image Source="{Binding FullImageUrl}"
-                                               Aspect="Fill"
-                                               />
+                                    <Frame
+                                        Grid.Row="0"
+                                        Padding="0"
+                                        CornerRadius="25"
+                                        HeightRequest="200"
+                                        WidthRequest="250">
+                                        <Image Aspect="Fill" Source="{Binding FullImageUrl}" />
 
                                     </Frame>
-                                    <Label Grid.Row="1"
-                                           Text="{Binding Name}"
-                                           FontSize="Subtitle"
-                                           FontAttributes="Bold"
-                                           />
-
-                                    <Label Grid.Row="2"
-                        Text="{Binding Address}"
-                        FontSize="Small"
-                    WidthRequest="250"
-                                           LineBreakMode="TailTruncation"
-       />
-
-                                    <Label Grid.Row="3"
-                                        Text="{Binding Price}"
+                                    <Label
+                                        Grid.Row="1"
+                                        FontAttributes="Bold"
                                         FontSize="Subtitle"
-                                           TextColor="#1d94ab"
-                                       
-       />
-                                    
-                                    
+                                        Text="{Binding Name}" />
 
+                                    <Label
+                                        Grid.Row="2"
+                                        FontSize="Small"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding Address}"
+                                        WidthRequest="250" />
+
+                                    <Label
+                                        Grid.Row="3"
+                                        FontSize="Subtitle"
+                                        Text="{Binding Price}"
+                                        TextColor="#1d94ab" />
                                 </Grid>
-
-
                             </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
