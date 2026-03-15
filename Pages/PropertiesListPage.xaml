@@ -6,6 +6,7 @@
     <CollectionView
         x:Name="CvProperties"
         Margin="10"
+        SelectionChanged="CvProperties_SelectionChanged"
         SelectionMode="Single">
 
         <CollectionView.ItemsLayout>
@@ -23,6 +24,7 @@
                         Grid.Column="0"
                         Padding="0"
                         CornerRadius="10"
+                        InputTransparent="True"
                         IsClippedToBounds="True">
                         <Image
                             Aspect="Fill"

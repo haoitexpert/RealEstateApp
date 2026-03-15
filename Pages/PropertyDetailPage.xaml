@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="RealEstateApp.Pages.PropertyDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PropertyDetailPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Image
+            x:Name="ImgProperty"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            Aspect="Fill"
+            HeightRequest="280"
+            Source="house02.jpg"
+            VerticalOptions="Start" />
+        <StackLayout
+            Grid.Row="1"
+            Margin="20,0,20,0"
+            Orientation="Horizontal">
+            <ImageButton
+                x:Name="ImgbackBtn"
+                Padding="5"
+                BackgroundColor="White"
+                CornerRadius="10"
+                HeightRequest="40"
+                HorizontalOptions="Start"
+                Source="back_icon.png"
+                VerticalOptions="Start"
+                WidthRequest="40" />
+
+            <ImageButton
+                x:Name="ImgbookmarkBtn"
+                Padding="5"
+                BackgroundColor="White"
+                CornerRadius="10"
+                HeightRequest="40"
+                HorizontalOptions="EndAndExpand"
+                Source="bookmark_empty_icon.png"
+                VerticalOptions="Start"
+                WidthRequest="40" />
+        </StackLayout>
+
+        <VerticalStackLayout Grid.Row="3" Margin="20">
+            <Label
+                x:Name="LblPrice"
+                FontSize="Subtitle"
+                Text="$1,200 / month" />
+            <HorizontalStackLayout Spacing="5">
+                <Image HeightRequest="20" Source="location_icon.png" />
+                <Label
+                    x:Name="LblAddress"
+                    FontSize="Medium"
+                    Text="123 Main St, Springfield" />
+            </HorizontalStackLayout>
+
+            <Label
+                Margin="0,20,0,10"
+                FontSize="Title"
+                Text="Description" />
+
+            <Label
+                x:Name="LblDescription"
+                FontSize="Medium"
+                Text="dsad dsadasda dasdad" />
+        </VerticalStackLayout>
+        <HorizontalStackLayout
+            Grid.Row="4"
+            HorizontalOptions="Center"
+            Spacing="30"
+            VerticalOptions="EndAndExpand">
+
+            <Frame
+                BackgroundColor="#1d94ab"
+                CornerRadius="35"
+                HeightRequest="70"
+                WidthRequest="150">
+                <HorizontalStackLayout Spacing="10">
+                    <Image
+                        HeightRequest="25"
+                        HorizontalOptions="CenterAndExpand"
+                        Source="phone_icon.png"
+                        VerticalOptions="Center"
+                        WidthRequest="25" />
+                    <Label
+                        FontSize="Medium"
+                        HorizontalOptions="StartAndExpand"
+                        Text="Call"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </HorizontalStackLayout>
+            </Frame>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>
