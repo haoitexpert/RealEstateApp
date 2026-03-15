@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="RealEstateApp.Pages.HomePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False">
     <ScrollView>
         <Grid Margin="20" RowSpacing="20">
             <Grid.RowDefinitions>
@@ -32,7 +33,11 @@
             <VerticalStackLayout Grid.Row="2" Spacing="20">
                 <Label FontSize="Large" Text="Categories" />
 
-                <CollectionView x:Name="CvCategories" HeightRequest="80">
+                <CollectionView
+                    x:Name="CvCategories"
+                    HeightRequest="80"
+                    SelectionChanged="CvCategories_SelectionChanged"
+                    SelectionMode="Single">
 
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal" />
@@ -40,7 +45,7 @@
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame>
+                            <Frame InputTransparent="True">
                                 <HorizontalStackLayout Spacing="5">
                                     <Image
                                         Aspect="AspectFit"

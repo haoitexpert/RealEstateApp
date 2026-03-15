@@ -2,8 +2,9 @@ namespace RealEstateApp.Pages;
 
 public partial class PropertiesListPage : ContentPage
 {
-	public PropertiesListPage()
-	{
-		InitializeComponent();
-	}
+    public PropertiesListPage(int categoryId, string categoryName)
+    {
+        InitializeComponent();
+        Title = categoryName;
+    }
 }
