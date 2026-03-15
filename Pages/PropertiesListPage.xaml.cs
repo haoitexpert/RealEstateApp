@@ -1,3 +1,5 @@
+using RealEstateApp.Services;
+
 namespace RealEstateApp.Pages;
 
 public partial class PropertiesListPage : ContentPage
@@ -6,5 +8,12 @@ public partial class PropertiesListPage : ContentPage
     {
         InitializeComponent();
         Title = categoryName;
+        GetPropertiesList(categoryId);  
+    }
+
+    private async void GetPropertiesList(int categoryId)
+    {
+       var properties = await ApiService.GetPropertyByCategory(categoryId);
+        CvProperties.ItemsSource = properties;
     }
 }

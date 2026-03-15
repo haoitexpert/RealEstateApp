@@ -24,15 +24,18 @@
                         Padding="0"
                         CornerRadius="10"
                         IsClippedToBounds="True">
-                        <Image Aspect="Fill" HeightRequest="160" />
+                        <Image
+                            Aspect="Fill"
+                            HeightRequest="160"
+                            Source="{Binding FullImageUrl}" />
                     </Frame>
                     <StackLayout
                         Grid.Column="1"
                         Padding="15"
                         Spacing="10">
-                        <Label FontSize="Medium" />
-                        <Label FontSize="Small" />
-                        <Label FontSize="Small" />
+                        <Label FontSize="Medium" Text="{Binding Price}" />
+                        <Label FontSize="Small" Text="{Binding Name}" />
+                        <Label FontSize="Small" Text="{Binding Address}" />
                     </StackLayout>
                 </Grid>
             </DataTemplate>
