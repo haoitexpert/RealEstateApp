@@ -32,4 +32,12 @@ public partial class HomePage : ContentPage
         ((CollectionView)sender).SelectedItem = null;
         await Navigation.PushAsync(new PropertiesListPage(currentSelection.Id, currentSelection.Name));
     }
+
+    private void CvTopPicks_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        var currentSelection = e.CurrentSelection.FirstOrDefault() as TrendingProperty;
+        if (currentSelection == null) return;
+         Navigation.PushModalAsync(new PropertyDetailPage(currentSelection.Id));
+        ((CollectionView)sender).SelectedItem = null;
+    }
 }

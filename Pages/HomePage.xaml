@@ -66,7 +66,11 @@
 
             <VerticalStackLayout Grid.Row="3" Spacing="20">
                 <Label FontSize="Large" Text="Top Picks" />
-                <CollectionView x:Name="CvTopPicks" HeightRequest="350">
+                <CollectionView
+                    x:Name="CvTopPicks"
+                    HeightRequest="350"
+                    SelectionChanged="CvTopPicks_SelectionChanged"
+                    SelectionMode="Single">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
@@ -76,7 +80,8 @@
                             <Frame
                                 Padding="15"
                                 BackgroundColor="White"
-                                CornerRadius="25">
+                                CornerRadius="25"
+                                InputTransparent="True">
                                 <Grid RowSpacing="5">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
