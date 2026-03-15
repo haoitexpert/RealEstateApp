@@ -81,12 +81,12 @@ namespace RealEstateApp.Services
             return JsonConvert.DeserializeObject<List<PropertyByCategory>>(response);
         }
 
-        public static async Task<List<PropertyDetail>> GetPropertyDetail(int propertyId)
+        public static async Task<PropertyDetail> GetPropertyDetail(int propertyId)
         {
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
             var response = await httpClient.GetStringAsync(AppSettings.ApiUrl + "api/Properties/PropertyDetail?id=" + propertyId);
-            return JsonConvert.DeserializeObject<List<PropertyDetail>>(response);
+            return JsonConvert.DeserializeObject<PropertyDetail>(response);
         }
 
 
