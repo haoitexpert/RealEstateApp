@@ -11,9 +11,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Image
+            <ImageButton
                 x:Name="ImgBackBtn"
                 Grid.Column="0"
+                Clicked="ImgBackBtn_Clicked"
                 HeightRequest="30"
                 HorizontalOptions="Center"
                 Source="left_arrow_icon.png"
@@ -24,6 +25,7 @@
                 Margin="5"
                 BackgroundColor="White"
                 Placeholder="Search"
+                TextChanged="SbProperty_TextChanged"
                 TextColor="Black" />
         </Grid>
         <CollectionView
@@ -36,7 +38,10 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Padding="10" FontSize="Medium" />
+                    <Label
+                        Padding="10"
+                        FontSize="Medium"
+                        Text="{Binding Address}" />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
