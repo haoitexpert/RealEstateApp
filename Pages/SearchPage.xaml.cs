@@ -1,3 +1,4 @@
+using RealEstateApp.Models;
 using RealEstateApp.Services;
 
 namespace RealEstateApp.Pages;
@@ -19,5 +20,13 @@ public partial class SearchPage : ContentPage
         if(e.NewTextValue == null) return;
         var propertiesResult = await ApiService.FindProperties(e.NewTextValue);
         CvSearch.ItemsSource = propertiesResult;
+    }
+
+    private void CvSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        var currentSelection = e.CurrentSelection.FirstOrDefault() as SearchProperty;
+        if (currentSelection == null) return;
+        Navigation.PushModalAsync(new PropertyDetailPage(currentSelection.Id));
+        ((CollectionView)sender).SelectedItem = null;
     }
 }
